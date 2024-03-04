@@ -5,6 +5,9 @@ from django.db import models
 class wrk(models.Model):
     name=models.CharField(max_length=100)
     desc=models.TextField()
+    # image=models.ImageField(upload_to='image/',blank=False)
+    def __str__(self):
+        return str(self.name)
 
 
 class userfeedback(models.Model):
@@ -12,3 +15,5 @@ class userfeedback(models.Model):
     phone=models.CharField(max_length=10)
     email=models.CharField(max_length=50)
     msg=models.TextField()
+    def __str__(self):
+        return str(self.email)
